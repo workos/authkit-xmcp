@@ -1,8 +1,8 @@
 # XMCP + AuthKit
 
-[XMCP](https://github.com/basementstudio/xmcp) is one of the simplest ways to get up and running quickly for MCP using TypeScript. This project is a simple demo to help you get started adding AuthKit to your XMCP server.
+[XMCP](https://github.com/basementstudio/xmcp) is one of the easiest ways to get up and running quickly for MCP using TypeScript. This project is a demo to help you get started adding AuthKit to your XMCP server.
 
-## Setup (super simple)
+## Setup
 
 You can create a new XMCP server via `npx create-xmcp-app@latest`. This will set up the file structure for the tools you need and give you `src/tools/greet.ts`.
 
@@ -17,10 +17,10 @@ const config: XmcpConfig = {
     oauth: {
       baseUrl: "http://localhost:3002", // Or your future deployment URL
       endpoints: {
-        authorizationUrl: process.env.AUTHKIT_DOMAIN + "/oauth2/authorize",
-        tokenUrl: process.env.AUTHKIT_DOMAIN + "/oauth2/token",
-        registerUrl: process.env.AUTHKIT_DOMAIN + "/oauth2/register",
-        userInfoUrl: process.env.AUTHKIT_DOMAIN + "/oauth2/userinfo",
+        authorizationUrl: `${process.env.AUTHKIT_DOMAIN}/oauth2/authorize`,
+        tokenUrl: `${process.env.AUTHKIT_DOMAIN}/oauth2/token`,
+        registerUrl: `${process.env.AUTHKIT_DOMAIN}/oauth2/register`,
+        userInfoUrl: `${process.env.AUTHKIT_DOMAIN}/oauth2/userinfo`,
       },
       issuerUrl: process.env.AUTHKIT_DOMAIN as string,
       defaultScopes: ["openid", "profile", "email"],
